@@ -1,16 +1,44 @@
-# React + Vite
+# Akshay Jawalkar | Professional Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Operating at the intersection of quantitative finance, clinical research, and scalable software engineering. Orchestrating complex systems to extract actionable insights from noise.
 
-Currently, two official plugins are available:
+## Live Website
+🔗 **[https://akshayjawalkar.vercel.app](https://akshayjawalkar.vercel.app)**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🛠️ Tech Stack & Capabilities
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend & Visuals**: React, Tailwind CSS, Framer Motion, Vanilla CSS (dynamic canvas particle effects, custom glassmorphism)
+- **Quantitative & Data**: Equity Research, Valuation Modeling, BLS & SBA Data Cleaning, Spreadsheet Analysis
+- **Clinical Research**: Pathophysiology, Pharmacology, Bone Biology (H1 vs H2 Antihistamine effects on osteoclasts/osteoblasts)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📂 Project Structure
+
+- `src/components/Hero.jsx` — Introduction & Professional summary.
+- `src/components/Skills.jsx` — Technical, quantitative, and operational capabilities.
+- `src/components/Experience.jsx` — Professional work and research timeline.
+- `src/components/Volunteer.jsx` — Service hours and clinical volunteering records.
+- `src/components/Accomplishments.jsx` — Honors and awards (DECA and HOSA).
+- `src/components/Contact.jsx` — Secure communication links.
+
+---
+
+## 🚀 Local Development
+
+1. **Install Dependencies**:
+   ```bash
+   npm install
+   ```
+
+2. **Run Dev Server**:
+   ```bash
+   npm run dev
+   ```
+
+3. **Build for Production**:
+   ```bash
+   npm run build
+   ```
