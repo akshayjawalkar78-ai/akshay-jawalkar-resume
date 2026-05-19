@@ -20,14 +20,14 @@ function App() {
       <div className="min-h-screen bg-space-900 flex items-center justify-center font-display text-accent-teal">
         <div className="flex flex-col items-center gap-4">
           <div className="w-16 h-16 border-t-2 border-r-2 border-accent-teal rounded-full animate-spin"></div>
-          <p className="tracking-[0.3em] uppercase text-sm animate-pulse">Initializing System...</p>
+          <p className="tracking-[0.3em] uppercase text-sm animate-pulse">Loading...</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="relative bg-space-900 min-h-screen selection:bg-accent-teal/30 selection:text-white">
+    <div className="relative min-h-screen selection:bg-accent-teal/30 selection:text-white">
       <Starfield />
       
       {/* Decorative fixed overlays */}

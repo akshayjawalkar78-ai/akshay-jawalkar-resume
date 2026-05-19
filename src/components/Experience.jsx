@@ -126,15 +126,21 @@ const experiences = [
 const Experience = () => {
   return (
     <Section id="experience" className="relative z-10">
-      <div className="mb-16 flex flex-col items-end text-right">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-50px' }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        className="mb-16 flex flex-col items-end text-right"
+      >
         <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight mb-4">
-          MISSION LOGS
+          EXPERIENCE
         </h2>
         <div className="h-[2px] w-24 bg-accent-blue mb-6"></div>
         <p className="text-gray-400 max-w-2xl text-lg">
-          Chronological record of operational deployments and strategic initiatives.
+          Chronological record of professional experience, research, and strategic initiatives.
         </p>
-      </div>
+      </motion.div>
 
       <div className="relative">
         {/* Central Timeline Line */}
@@ -152,10 +158,11 @@ const Experience = () => {
               {/* Content Panel */}
               <div className={`w-full md:w-1/2 pl-24 md:pl-0 ${idx % 2 === 0 ? 'md:pr-16 text-left md:text-right' : 'md:pl-16 text-left'}`}>
                 <motion.div 
-                  initial={{ opacity: 0, x: idx % 2 === 0 ? 50 : -50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-50px' }}
-                  transition={{ duration: 0.6, type: "spring", stiffness: 50 }}
+                  transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                  style={{ willChange: "transform, opacity" }}
                   className="glass-panel p-8 glass-panel-hover"
                 >
                   <span className="text-xs font-mono text-accent-teal tracking-widest uppercase mb-2 block">

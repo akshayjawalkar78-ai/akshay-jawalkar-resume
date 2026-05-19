@@ -24,17 +24,18 @@ const Contact = () => {
     <Section id="contact" className="relative z-10 pb-32">
       <div className="max-w-4xl mx-auto text-center">
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          style={{ willChange: "transform, opacity" }}
           className="glass-panel p-12 relative overflow-hidden"
         >
           {/* Decorative Background */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-gradient-to-b from-accent-blue/10 to-transparent blur-3xl pointer-events-none"></div>
 
           <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight mb-6 relative z-10">
-            INITIATE CONTACT
+            CONTACT
           </h2>
           <p className="text-gray-400 mb-10 max-w-xl mx-auto relative z-10">
             Open to strategic partnerships, research opportunities, and operational roles where 
@@ -63,7 +64,7 @@ const Contact = () => {
           </div>
 
           <div className="mt-16 pt-8 border-t border-white/5 text-xs text-gray-500 tracking-widest uppercase flex flex-col md:flex-row justify-between items-center gap-4">
-            <p>System Online // Ready for Deployment</p>
+            <p>Available for New Opportunities</p>
             <p>Location: Jacksonville, FL</p>
           </div>
         </motion.div>
