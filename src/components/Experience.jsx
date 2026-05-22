@@ -26,7 +26,7 @@ const experiences = [
     ]
   },
   {
-    role: 'Marketing Team',
+    role: 'IT and Marketing Team',
     company: 'USA Economics Olympiad',
     date: 'May 2026 – Present',
     icon: <TrendingUp className="text-accent-blue" size={24} />,
