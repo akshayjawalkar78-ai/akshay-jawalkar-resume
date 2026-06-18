@@ -6,6 +6,7 @@ import Experience from './components/Experience';
 import Volunteer from './components/Volunteer';
 import Accomplishments from './components/Accomplishments';
 import Contact from './components/Contact';
+import Navbar from './components/Navbar';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -30,6 +31,7 @@ function App() {
   return (
     <div className="relative min-h-screen selection:bg-accent-teal/30 selection:text-white">
       <Starfield />
+      <Navbar />
       
       {/* Decorative fixed overlays */}
       <div className="fixed top-0 left-0 w-full h-32 bg-gradient-to-b from-space-900 to-transparent z-50 pointer-events-none"></div>

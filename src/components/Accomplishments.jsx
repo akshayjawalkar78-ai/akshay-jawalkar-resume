@@ -32,6 +32,11 @@ const awardsData = [
         title: 'Regional Leadership Conference Qualifier — Pathophysiology',
         description: 'Demonstrated mastery of advanced disease mechanisms and medical science concepts, qualifying for the regional competition in health sciences.',
         badge: 'Regional Qualifier'
+      },
+      {
+        title: 'Barbara James Service Award',
+        description: 'Recognized for outstanding commitment to community service and volunteerism within the healthcare field.',
+        badge: 'Service Recognition'
       }
     ]
   }
