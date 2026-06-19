@@ -46,11 +46,8 @@ const AIAssistant = () => {
   const [input, setInput] = useState('');
   const terminalEndRef = useRef(null);
 
-  useEffect(() => {
-    if (terminalEndRef.current) {
-      terminalEndRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  }, [history]);
+  // Intentionally do not auto-scroll on every history update so the console stays
+  // at the user's current scroll position when they press Enter.
 
   const handleCommand = (cmd) => {
     const cleanCmd = cmd.trim().toLowerCase();
