@@ -22,6 +22,17 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    if (!loading) {
+      // Ensure the page is at the very top immediately after loading finishes
+      try {
+        window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+      } catch (e) {
+        window.scrollTo(0, 0);
+      }
+    }
+  }, [loading]);
+
   if (loading) {
     return (
       <div className="min-h-screen bg-space-950 flex flex-col items-center justify-center font-mono text-accent-blue p-6 hud-scanline">

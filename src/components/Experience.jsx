@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import Section from './Section';
 import InteractiveGlobe from './InteractiveGlobe';
+import experiences from '../data/experiences';
 import { 
   Briefcase, 
   Activity, 
@@ -15,123 +16,6 @@ import {
   TrendingUp,
   Compass
 } from 'lucide-react';
-
-const experiences = [
-  {
-    role: 'Investment Analyst',
-    company: 'Advanced Equities',
-    date: 'May 2026 – Present',
-    icon: <Activity className="text-accent-teal" size={18} />,
-    sector: 'QUANT_FINANCE // LIVE_PORTFOLIO',
-    achievements: [
-      'Managed and analyzed a live $15,500+ capital portfolio through systematic performance tracking and risk-focused decision-making.',
-      'Conducted institutional-style equity research utilizing valuation models, catalyst identification, and structured investment thesis development.'
-    ]
-  },
-  {
-    role: 'IT and Marketing Team',
-    company: 'USA Economics Olympiad',
-    date: 'May 2026 – Present',
-    icon: <TrendingUp className="text-accent-blue" size={18} />,
-    sector: 'GROWTH_SEO // ON_PAGE_TRAFFIC',
-    achievements: [
-      'Identified technical and on-page SEO optimization opportunities, implementing site structure improvements, metadata optimization, and performance enhancements to strengthen search visibility and organic rankings.',
-      'Developed SEO-driven content strategy focused on keyword optimization and search intent alignment, increasing organic visibility for AI-related services and target industries.'
-    ]
-  },
-  {
-    role: 'Independent Researcher',
-    company: 'Synthica',
-    date: 'Apr 2026 – Present',
-    icon: <GraduationCap className="text-accent-blue" size={18} />,
-    sector: 'PHARMACOLOGY // OSTEOCLAST_BIOLOGY',
-    achievements: [
-      'Leading original research on the differential effects of H1 vs. H2 antihistamines on osteoclast and osteoblast activity, contributing to the emerging intersection of pharmacology and bone biology.'
-    ]
-  },
-  {
-    role: 'Data Analyst',
-    company: 'Equity Economics Research Lab',
-    date: 'Present',
-    icon: <Briefcase className="text-accent-teal" size={18} />,
-    sector: 'DATA_SCIENCE // DATASET_CLEANING',
-    achievements: [
-      'Executed end-to-end dataset cleaning and equity research data analysis using BLS and SBA datasets to surface actionable economic insights.',
-      "Mentored by Ng Kai Ming (MIT, Master's in Data Science), applying graduate-level analytical frameworks to real-world research projects."
-    ]
-  },
-  {
-    role: 'Outreach Officer',
-    company: 'ThinkFinance',
-    date: 'Apr 2026 – Present',
-    icon: <Users className="text-accent-blue" size={18} />,
-    sector: 'PARTNERSHIPS // SOCIAL_ENGAGEMENT',
-    achievements: [
-      'Drove external partnership and stakeholder outreach initiatives to expand organizational visibility within the finance education sector.'
-    ]
-  },
-  {
-    role: 'Marketing Intern',
-    company: 'Mind4Youth',
-    date: 'Apr 2026 – Present',
-    icon: <Megaphone className="text-accent-teal" size={18} />,
-    sector: 'CAMPAIGNS // OUTREACH_OPS',
-    achievements: [
-      'Designed and executed multi-channel marketing campaigns across social media, print, and presentations, increasing organizational engagement.',
-      'Developed data-driven user engagement strategies and produced high-quality content to grow the organization\'s digital footprint.'
-    ]
-  },
-  {
-    role: 'Growth Director',
-    company: 'Volta',
-    date: 'Present',
-    icon: <Rocket className="text-accent-blue" size={18} />,
-    sector: 'CLIENT_ACQUISITION // PIPELINE_OPS',
-    achievements: [
-      'Spearheaded client acquisition and strategic partnership development, directly expanding Volta\'s market reach and revenue pipeline.'
-    ]
-  },
-  {
-    role: 'Florida State Lead',
-    company: 'Youth Economy Lab',
-    date: 'Present',
-    icon: <Map className="text-accent-teal" size={18} />,
-    sector: 'STATE_LEAD // RECRUITMENT_OPS',
-    achievements: [
-      'Directed statewide operations for Youth Economy Lab in Florida, overseeing student recruitment, partnership building, and program coordination across the state.'
-    ]
-  },
-  {
-    role: 'Founder',
-    company: 'ActiveRecallCoach',
-    date: 'Present',
-    icon: <Code className="text-accent-blue" size={18} />,
-    sector: 'ENGINEERING // STACK_DEPLOYMENT',
-    achievements: [
-      'Founded and independently engineered ActiveRecallCoach, a science-backed active recall study platform coded in JavaScript, from concept through deployment.'
-    ]
-  },
-  {
-    role: 'Treasurer',
-    company: 'Stanton College Preparatory School — FBLA',
-    date: 'May 2026 – Present',
-    icon: <Calculator className="text-accent-teal" size={18} />,
-    sector: 'BUDGETARY_PLANNING // chapter_ops',
-    achievements: [
-      'Oversaw financial planning and budget management for the chapter, ensuring fiscal accountability and resource allocation in support of competitive programming.'
-    ]
-  },
-  {
-    role: 'Varsity Soccer',
-    company: 'Stanton College Preparatory School',
-    date: 'Nov 2025 – Present',
-    icon: <Trophy className="text-accent-blue" size={18} />,
-    sector: 'ATHLETICS // STAMINA_OPS',
-    achievements: [
-      'Competed at the varsity level, maintaining high academic performance alongside a rigorous athletic training and competition schedule.'
-    ]
-  }
-];
 
 const Experience = () => {
   return (

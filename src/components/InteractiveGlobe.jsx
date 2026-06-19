@@ -1,12 +1,16 @@
 import { useEffect, useRef, useState } from 'react';
+import experiences from '../data/experiences';
 
-// Coordinates representation: lat (-90 to 90), lon (-180 to 180)
-const markers = [
-  { label: 'Brooks Rehab / MOSH', location: 'Jacksonville, FL', lat: 30.33, lon: -81.65, color: '#00ffd2' },
-  { label: 'Equity Econ Research / MIT Mentorship', location: 'Boston, MA', lat: 42.36, lon: -71.06, color: '#00e5ff' },
-  { label: 'ThinkFinance / USA Econ Olympiad', location: 'Global / Remote', lat: 38.90, lon: -77.03, color: '#bd00ff' },
-  { label: 'ActiveRecallCoach / Vercel', location: 'Cloud Node', lat: 37.77, lon: -122.41, color: '#00ffd2' }
-];
+// Build markers from experiences data (require lat/lon in data file)
+const markers = experiences
+  .filter((e) => typeof e.lat === 'number' && typeof e.lon === 'number')
+  .map((e, i) => ({
+    label: `${e.role} @ ${e.company}`,
+    location: e.location || '',
+    lat: e.lat,
+    lon: e.lon,
+    color: ['#00ffd2', '#00e5ff', '#bd00ff', '#ffd100', '#8ecbff'][i % 5]
+  }));
 
 const InteractiveGlobe = () => {
   const canvasRef = useRef(null);

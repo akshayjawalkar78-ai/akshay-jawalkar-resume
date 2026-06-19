@@ -81,23 +81,9 @@ const Skills = () => {
             <div className="space-y-6">
               {category.skills.map((skill, sIdx) => (
                 <div key={sIdx} className="space-y-2">
-                  <div className="flex justify-between items-center text-[10px] font-mono">
+                  <div className="flex items-center gap-3 text-[12px] font-mono">
+                    <span className="w-2 h-2 rounded-full bg-accent-blue/60 inline-block" />
                     <span className="text-gray-300 tracking-wider uppercase font-semibold">{skill.name}</span>
-                    <span className="text-accent-teal">{skill.level}% PROFICIENCY</span>
-                  </div>
-
-                  {/* Spaceship Battery Power bar */}
-                  <div className="w-full bg-space-950 h-2 border border-white/5 rounded-sm overflow-hidden p-[1px] flex items-center relative">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${skill.level}%` }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 1.2, delay: sIdx * 0.05, ease: "easeOut" }}
-                      className={`h-full bg-gradient-to-r ${category.color} rounded-sm relative`}
-                    >
-                      {/* Pulse spark inside bar */}
-                      <span className="absolute right-0 top-0 bottom-0 w-1 bg-white animate-pulse" />
-                    </motion.div>
                   </div>
                 </div>
               ))}
