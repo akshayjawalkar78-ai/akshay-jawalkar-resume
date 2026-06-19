@@ -146,13 +146,13 @@ const Experience = () => {
         className="mb-16 flex flex-col items-start text-left border-l-2 border-accent-blue pl-6"
       >
         <div className="text-[10px] font-mono text-accent-blue tracking-[0.25em] uppercase mb-1">
-          NAVIGATION LOG REGISTRY
+          PROFESSIONAL TIMELINE
         </div>
         <h2 className="font-mono text-3xl md:text-4xl font-bold tracking-tight mb-3 text-white uppercase text-glow-cyan">
-          FLIGHT EXPERIENCE TIMELINE
+          CAREER EXPERIENCE HIGHLIGHTS
         </h2>
         <p className="text-gray-400 max-w-2xl text-sm font-light">
-          A chronological logbook of professional operations, quantitative engineering, and clinical research missions.
+          A chronological overview of professional experience across finance, research, and technical leadership.
         </p>
       </motion.div>
 
@@ -219,15 +219,15 @@ const Experience = () => {
           
           <div className="hud-panel p-4 border-accent-blue/10 bg-space-950/40 text-[9px] font-mono text-gray-500 uppercase tracking-widest space-y-2">
             <div className="flex justify-between">
-              <span>ACTIVE_RECOVERY:</span>
+              <span>PROFILE STATUS:</span>
               <span className="text-accent-teal">ONLINE</span>
             </div>
             <div className="flex justify-between">
-              <span>PING:</span>
+              <span>RESPONSE TIME:</span>
               <span>12MS // STANTON</span>
             </div>
             <div className="flex justify-between">
-              <span>GRID SECURE:</span>
+              <span>SECURITY:</span>
               <span className="text-accent-teal">AES_256</span>
             </div>
           </div>

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 const radarSections = [
-  { id: 'hero', label: 'SYS_INIT', angle: 0, radius: 20 },
+  { id: 'hero', label: 'HOME', angle: 0, radius: 20 },
   { id: 'skills', label: 'CAPABILITIES', angle: 60, radius: 32 },
   { id: 'experience', label: 'EXPERIENCE', angle: 135, radius: 44 },
   { id: 'volunteer', label: 'VOLUNTEER', angle: 210, radius: 56 },
@@ -56,8 +56,8 @@ const RadarMap = () => {
           className="hud-panel p-3 border-accent-blue/20 bg-space-950/90 backdrop-blur-md mb-2 w-48 text-[10px] font-mono leading-relaxed"
         >
           <div className="text-accent-blue border-b border-white/10 pb-1.5 mb-1.5 uppercase font-bold tracking-widest flex justify-between">
-            <span>SECTOR RADAR</span>
-            <span className="animate-pulse">SCANNING...</span>
+            <span>SECTION MAP</span>
+            <span className="animate-pulse">READY</span>
           </div>
           <div className="space-y-1 text-gray-400">
             {radarSections.map((sec) => (
@@ -69,7 +69,7 @@ const RadarMap = () => {
                 }`}
               >
                 <span>{sec.label}</span>
-                <span>{activeSection === sec.id ? '◄ TARGET' : 'MARK'}</span>
+                <span>{activeSection === sec.id ? '◄ SELECTED' : 'VIEW'}</span>
               </button>
             ))}
           </div>

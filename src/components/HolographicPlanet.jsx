@@ -187,6 +187,7 @@ const HolographicPlanet = () => {
       
       // Large orbital disk / ring
       ctx.beginPath();
+      let firstPoint = true;
       for (let j = 0; j <= 60; j++) {
         const tRing = (j / 60) * Math.PI * 2;
         const rRing = radius * 1.5;
@@ -200,6 +201,7 @@ const HolographicPlanet = () => {
         const proj = project(rx, ry, rz);
         if (firstPoint) {
           ctx.moveTo(proj.x, proj.y);
+          firstPoint = false;
         } else {
           ctx.lineTo(proj.x, proj.y);
         }

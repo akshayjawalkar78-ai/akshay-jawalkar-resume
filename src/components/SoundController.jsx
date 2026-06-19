@@ -169,7 +169,7 @@ const SoundController = () => {
               ? 'border-accent-teal/40 bg-accent-teal/10 text-accent-teal shadow-[0_0_10px_rgba(0,255,210,0.2)]' 
               : 'border-white/10 text-gray-400 hover:text-white hover:border-white/20'
           }`}
-          aria-label="Toggle ambient spacecraft audio"
+          aria-label="Toggle ambient audio preview"
         >
           {isPlaying ? <Volume2 size={16} /> : <VolumeX size={16} />}
           
@@ -202,8 +202,8 @@ const SoundController = () => {
 
         {/* Console Text Readout */}
         <div className="flex flex-col text-[9px] font-mono leading-none tracking-widest text-gray-500 uppercase pr-1">
-          <span className="text-gray-400 font-semibold">{isPlaying ? 'AMB ACTIVE' : 'AMB STDBY'}</span>
-          <span className="text-[8px] mt-0.5">{isPlaying ? '55.4HZ DRONE' : 'MUTE'}</span>
+          <span className="text-gray-400 font-semibold">{isPlaying ? 'AUDIO ON' : 'AUDIO OFF'}</span>
+          <span className="text-[8px] mt-0.5">{isPlaying ? 'SOFT AMBIENCE' : 'MUTE'}</span>
         </div>
       </motion.div>
     </div>

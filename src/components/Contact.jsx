@@ -39,15 +39,15 @@ const Contact = () => {
           <div className="flex justify-center mb-6">
             <div className="flex items-center gap-2 px-3 py-1 rounded bg-accent-teal/5 border border-accent-teal/20 text-[9px] font-mono text-accent-teal uppercase tracking-widest animate-pulse">
               <ShieldCheck size={12} />
-              <span>SECURE UPLINK U_104</span>
+              <span>SECURE CONTACT PORTAL</span>
             </div>
           </div>
 
           <h2 className="font-mono text-3xl md:text-4xl font-bold tracking-tight mb-4 text-white uppercase text-glow-cyan">
-            ESTABLISH COMMS LINK
+            GET IN TOUCH
           </h2>
           <p className="text-gray-400 mb-10 max-w-md mx-auto text-xs leading-relaxed font-light">
-            Open to strategic partnerships, research opportunities, and operational roles where high-leverage thinking meets rigorous execution.
+            Open to strategic partnerships, research opportunities, and roles where analytical rigor meets practical execution.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center items-center gap-5 relative z-10">

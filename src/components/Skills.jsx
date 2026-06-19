@@ -4,7 +4,7 @@ import { Shield, Zap, Sparkles } from 'lucide-react';
 
 const skillCategories = [
   {
-    title: 'QUANTITATIVE & RESEARCH CORES',
+    title: 'QUANTITATIVE & RESEARCH',
     icon: <Shield className="text-accent-teal" size={18} />,
     color: 'from-accent-teal to-accent-blue',
     skills: [
@@ -16,7 +16,7 @@ const skillCategories = [
     ]
   },
   {
-    title: 'STRATEGY & OPERATIONS CORES',
+    title: 'STRATEGY & OPERATIONS',
     icon: <Zap className="text-accent-purple" size={18} />,
     color: 'from-accent-purple to-pink-500',
     skills: [
@@ -27,7 +27,7 @@ const skillCategories = [
     ]
   },
   {
-    title: 'TECHNICAL ARSENAL CORES',
+    title: 'TECHNICAL SKILLS',
     icon: <Sparkles className="text-accent-blue" size={18} />,
     color: 'from-accent-blue to-accent-teal',
     skills: [
@@ -45,13 +45,13 @@ const Skills = () => {
     <Section id="skills" className="relative z-10">
       <div className="mb-16 text-left border-l-2 border-accent-teal pl-6">
         <div className="text-[10px] font-mono text-accent-teal tracking-[0.25em] uppercase mb-1">
-          SUB-SYSTEM DIAGNOSTICS
+          CORE COMPETENCIES
         </div>
         <h2 className="font-mono text-3xl md:text-4xl font-bold tracking-tight mb-3 text-white uppercase text-glow-cyan">
-          CAPABILITIES ENGINE CORES
+          CAPABILITIES & EXPERTISE
         </h2>
         <p className="text-gray-400 max-w-2xl text-sm font-light">
-          A multi-disciplinary matrix of skills currently operating at optimal efficiency levels across engineering, finance, and medical science sectors.
+          A multi-disciplinary matrix of skills currently supporting work across engineering, finance, and medical science domains.
         </p>
       </div>
 
@@ -83,7 +83,7 @@ const Skills = () => {
                 <div key={sIdx} className="space-y-2">
                   <div className="flex justify-between items-center text-[10px] font-mono">
                     <span className="text-gray-300 tracking-wider uppercase font-semibold">{skill.name}</span>
-                    <span className="text-accent-teal">{skill.level}% CHARGE</span>
+                    <span className="text-accent-teal">{skill.level}% PROFICIENCY</span>
                   </div>
 
                   {/* Spaceship Battery Power bar */}
@@ -105,7 +105,7 @@ const Skills = () => {
 
             {/* Simulated hardware info at panel bottom */}
             <div className="mt-8 pt-4 border-t border-white/5 flex justify-between items-center text-[8px] font-mono text-gray-600 uppercase">
-              <span>CORE_UNIT: {idx + 1}</span>
+              <span>CATEGORY: {idx + 1}</span>
               <span className="animate-pulse text-accent-teal">STATUS: READY</span>
             </div>
           </motion.div>
