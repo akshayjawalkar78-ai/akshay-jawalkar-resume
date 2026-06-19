@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import Section from './Section';
-import { Mail, ExternalLink } from 'lucide-react';
+import { Mail, ExternalLink, ShieldCheck } from 'lucide-react';
 
 const GithubIcon = ({ size = 24, className = "" }) => (
   <svg
@@ -19,6 +19,7 @@ const GithubIcon = ({ size = 24, className = "" }) => (
     <path d="M9 18c-4.5 1.5-5-2.5-7-3" />
   </svg>
 );
+
 const Contact = () => {
   return (
     <Section id="contact" className="relative z-10 pb-32">
@@ -28,44 +29,53 @@ const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          style={{ willChange: "transform, opacity" }}
-          className="glass-panel p-12 relative overflow-hidden"
+          className="hud-panel p-10 md:p-12 relative overflow-hidden bg-space-950/50 border-accent-blue/15"
         >
-          {/* Decorative Background */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-gradient-to-b from-accent-blue/10 to-transparent blur-3xl pointer-events-none"></div>
+          {/* Corner bracket styling */}
+          <div className="absolute top-0 left-0 w-4.5 h-4.5 border-t border-l border-accent-blue/30" />
+          <div className="absolute bottom-0 right-0 w-4.5 h-4.5 border-b border-r border-accent-blue/30" />
 
-          <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight mb-6 relative z-10">
-            CONTACT
+          {/* Secure lock indicator */}
+          <div className="flex justify-center mb-6">
+            <div className="flex items-center gap-2 px-3 py-1 rounded bg-accent-teal/5 border border-accent-teal/20 text-[9px] font-mono text-accent-teal uppercase tracking-widest animate-pulse">
+              <ShieldCheck size={12} />
+              <span>SECURE UPLINK U_104</span>
+            </div>
+          </div>
+
+          <h2 className="font-mono text-3xl md:text-4xl font-bold tracking-tight mb-4 text-white uppercase text-glow-cyan">
+            ESTABLISH COMMS LINK
           </h2>
-          <p className="text-gray-400 mb-10 max-w-xl mx-auto relative z-10">
-            Open to strategic partnerships, research opportunities, and operational roles where 
-            high-leverage thinking meets rigorous execution.
+          <p className="text-gray-400 mb-10 max-w-md mx-auto text-xs leading-relaxed font-light">
+            Open to strategic partnerships, research opportunities, and operational roles where high-leverage thinking meets rigorous execution.
           </p>
 
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-6 relative z-10">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-5 relative z-10">
             <a 
               href="mailto:akshay.jawalkar78@gmail.com"
-              className="flex items-center gap-3 px-8 py-4 bg-white/5 border border-white/10 rounded-full hover:border-accent-teal hover:bg-accent-teal/10 transition-all group w-full sm:w-auto justify-center"
+              className="flex items-center gap-3 px-6 py-3.5 bg-white/5 border border-white/10 rounded-xl hover:border-accent-teal hover:bg-accent-teal/5 transition-all group w-full sm:w-auto justify-center font-mono text-xs uppercase tracking-wider text-gray-300 hover:text-white"
+              style={{ cursor: 'none' }}
             >
-              <Mail size={18} className="text-gray-300 group-hover:text-accent-teal transition-colors" />
-              <span className="text-sm font-medium tracking-wide">akshay.jawalkar78@gmail.com</span>
+              <Mail size={14} className="text-gray-400 group-hover:text-accent-teal transition-colors" />
+              <span>akshay.jawalkar78@gmail.com</span>
             </a>
 
             <a 
               href="https://github.com/akshayjawalkar78-ai"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 px-8 py-4 bg-white/5 border border-white/10 rounded-full hover:border-accent-blue hover:bg-accent-blue/10 transition-all group w-full sm:w-auto justify-center"
+              className="flex items-center gap-3 px-6 py-3.5 bg-white/5 border border-white/10 rounded-xl hover:border-accent-blue hover:bg-accent-blue/5 transition-all group w-full sm:w-auto justify-center font-mono text-xs uppercase tracking-wider text-gray-300 hover:text-white"
+              style={{ cursor: 'none' }}
             >
-              <GithubIcon size={18} className="text-gray-300 group-hover:text-accent-blue transition-colors" />
-              <span className="text-sm font-medium tracking-wide">GitHub Profile</span>
-              <ExternalLink size={14} className="text-gray-500 group-hover:text-accent-blue" />
+              <GithubIcon size={14} className="text-gray-400 group-hover:text-accent-blue transition-colors" />
+              <span>GitHub Profile</span>
+              <ExternalLink size={12} className="text-gray-600 group-hover:text-accent-blue" />
             </a>
           </div>
 
-          <div className="mt-16 pt-8 border-t border-white/5 text-xs text-gray-500 tracking-widest uppercase flex flex-col md:flex-row justify-between items-center gap-4">
-            <p>Available for New Opportunities</p>
-            <p>Location: Jacksonville, FL</p>
+          <div className="mt-16 pt-6 border-t border-white/5 text-[9px] font-mono text-gray-600 tracking-widest uppercase flex flex-col md:flex-row justify-between items-center gap-4">
+            <p>AVAILABLE FOR COOPERATIVE OPERATIONS</p>
+            <p>LOC: JACKSONVILLE, FL // STANTON PREP</p>
           </div>
         </motion.div>
       </div>
@@ -74,3 +84,4 @@ const Contact = () => {
 };
 
 export default Contact;
+

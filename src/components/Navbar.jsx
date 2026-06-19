@@ -1,24 +1,32 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Radio } from 'lucide-react';
 
 const navItems = [
-  { label: 'Experience', href: '#experience' },
-  { label: 'Volunteering', href: '#volunteer' },
-  { label: 'Honors & Awards', href: '#accomplishments' },
-  { label: 'Contact', href: '#contact' }
+  { label: 'CAPABILITIES', href: '#skills' },
+  { label: 'MISSION LOG', href: '#experience' },
+  { label: 'VOLUNTEER BAY', href: '#volunteer' },
+  { label: 'HONORS', href: '#accomplishments' },
+  { label: 'COMMS LINK', href: '#contact' }
 ];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeItem, setActiveItem] = useState('#skills');
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
+      setScrolled(window.scrollY > 40);
+      
+      // Update active nav link based on scroll section
+      const scrollPos = window.scrollY + 200;
+      for (const item of navItems) {
+        const el = document.querySelector(item.href);
+        if (el && el.offsetTop <= scrollPos && el.offsetTop + el.offsetHeight > scrollPos) {
+          setActiveItem(item.href);
+          break;
+        }
       }
     };
     window.addEventListener('scroll', handleScroll);
@@ -32,39 +40,63 @@ const Navbar = () => {
         initial={{ y: -100, x: '-50%', opacity: 0 }}
         animate={{ y: 0, x: '-50%', opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
-        className={`fixed top-6 left-1/2 -translate-x-1/2 z-[60] w-[90%] max-w-4xl transition-all duration-300 ${
-          scrolled 
-            ? 'shadow-[0_8px_30px_rgba(0,0,0,0.5)]' 
-            : ''
-        }`}
+        className="fixed top-5 left-1/2 -translate-x-1/2 z-[60] w-[92%] max-w-5xl transition-all duration-300"
       >
-        <div className="px-6 py-4 md:px-8 md:py-3 flex items-center justify-between bg-space-900/30 backdrop-blur-xl border border-white/10 rounded-full">
-          {/* Logo / Initials */}
-          <a href="#" className="font-display font-bold text-lg tracking-wider text-white hover:text-accent-teal transition-colors flex items-center gap-2">
-            AJ<span className="w-1.5 h-1.5 rounded-full bg-accent-teal"></span>
+        <div className={`px-6 py-3 md:px-8 md:py-2.5 flex items-center justify-between border transition-all duration-300 rounded-xl bg-space-950/70 backdrop-blur-md ${
+          scrolled 
+            ? 'border-accent-blue/30 shadow-[0_4px_30px_rgba(0,e5,ff,0.1)]' 
+            : 'border-white/5'
+        }`}>
+          {/* Deck Signature & Logo */}
+          <a href="#" className="font-mono font-bold text-sm tracking-widest text-white hover:text-accent-teal transition-colors flex items-center gap-2" style={{ cursor: 'none' }}>
+            <Radio size={12} className="text-accent-teal animate-pulse" />
+            <span>AJ_CMD_DECK</span>
           </a>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="text-xs uppercase tracking-widest text-gray-400 hover:text-white font-medium transition-colors relative py-1.5 group"
-              >
-                {item.label}
-                <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-gradient-to-r from-accent-teal to-accent-blue transition-all duration-300 group-hover:w-full"></span>
-              </a>
-            ))}
+          {/* Desktop Spaceship Deck Navigation */}
+          <nav className="hidden md:flex items-center gap-8 font-mono">
+            {navItems.map((item) => {
+              const isActive = activeItem === item.href;
+              return (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className={`text-[10px] tracking-[0.2em] font-semibold transition-all duration-300 relative py-2.5 group uppercase ${
+                    isActive ? 'text-accent-teal text-glow-cyan' : 'text-gray-500 hover:text-white'
+                  }`}
+                  style={{ cursor: 'none' }}
+                >
+                  {item.label}
+                  {/* Glowing line beneath active link */}
+                  {isActive && (
+                    <motion.span 
+                      layoutId="navActiveLine" 
+                      className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-accent-blue to-accent-teal shadow-[0_0_8px_#00ffd2]"
+                    />
+                  )}
+                  {/* Subtle hover dots */}
+                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-accent-blue opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </a>
+              );
+            })}
           </nav>
+
+          {/* Telemetry indicator status */}
+          <div className="hidden lg:flex items-center gap-4 text-[9px] font-mono text-gray-500 border-l border-white/10 pl-6 pr-2">
+            <span className="flex items-center gap-1">
+              <span className="w-1.5 h-1.5 bg-accent-teal rounded-full animate-ping" />
+              CON_STABLE
+            </span>
+          </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-1 text-gray-400 hover:text-white transition-colors"
+            className="md:hidden p-1.5 text-gray-400 hover:text-white border border-white/5 rounded-lg bg-space-900/40"
             aria-label="Toggle menu"
+            style={{ cursor: 'none' }}
           >
-            {isOpen ? <X size={20} /> : <Menu size={20} />}
+            {isOpen ? <X size={16} /> : <Menu size={16} />}
           </button>
         </div>
 
@@ -76,17 +108,19 @@ const Navbar = () => {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: -10 }}
               transition={{ duration: 0.3, ease: 'easeOut' }}
-              className="absolute top-16 left-0 right-0 glass-panel p-6 bg-space-900/90 backdrop-blur-xl border border-white/10 rounded-3xl md:hidden mt-2"
+              className="absolute top-16 left-0 right-0 hud-panel p-6 bg-space-950/95 backdrop-blur-xl border border-accent-blue/20 rounded-xl md:hidden mt-2"
             >
-              <nav className="flex flex-col gap-4">
+              <nav className="flex flex-col gap-4 font-mono">
                 {navItems.map((item) => (
                   <a
                     key={item.href}
                     href={item.href}
                     onClick={() => setIsOpen(false)}
-                    className="text-sm uppercase tracking-widest text-gray-300 hover:text-accent-teal py-2 border-b border-white/5 last:border-0 transition-colors font-medium"
+                    className="text-[10px] tracking-[0.2em] text-gray-400 hover:text-accent-teal py-2.5 border-b border-white/5 last:border-0 transition-colors font-medium flex items-center justify-between"
+                    style={{ cursor: 'none' }}
                   >
-                    {item.label}
+                    <span>{item.label}</span>
+                    <span className="text-[8px] text-gray-600">CMD//SEC</span>
                   </a>
                 ))}
               </nav>
@@ -99,3 +133,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
