@@ -46,7 +46,6 @@ const HUDOverlay = () => {
               <Disc size={10} className="animate-spin text-accent-blue" />
               PROFILE ONLINE
             </span>
-            <span>PROFILE_REF: STANTON_DECA_HOSA_2026</span>
           </div>
           <div>{time}</div>
           <div className="flex items-center gap-6">

@@ -1,0 +1,16 @@
+{
+  "name": "Akshay Jawalkar Portfolio",
+  "short_name": "AkshayJawalkar",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "description": "Portfolio website for Akshay Jawalkar, highlighting leadership, entrepreneurship, DECA, HOSA, marketing, research, and student achievements.",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

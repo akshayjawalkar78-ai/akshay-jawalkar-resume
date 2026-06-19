@@ -82,7 +82,10 @@ const AIAssistant = () => {
         response = CONTACT_TEXT;
         break;
       case 'clear':
-        setHistory([]);
+        setHistory([
+          { text: 'INTERACTIVE PROFILE CONSOLE', type: 'system' },
+          { text: 'Type "help" to display available commands.', type: 'system' }
+        ]);
         setInput('');
         return;
       default:
@@ -136,12 +139,10 @@ const AIAssistant = () => {
           onChange={(e) => setInput(e.target.value)}
           placeholder="Type 'help', 'about', 'skills', 'experience', 'contact', or 'clear'..."
           className="bg-transparent border-0 outline-0 ring-0 text-accent-teal placeholder-gray-600 w-full font-mono text-xs focus:ring-0 focus:outline-none"
-          style={{ cursor: 'none' }}
         />
         <button 
           type="submit" 
           className="p-1.5 text-accent-blue hover:text-accent-teal transition-colors focus:outline-none"
-          style={{ cursor: 'none' }}
         >
           <Send size={14} />
         </button>
