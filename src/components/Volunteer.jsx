@@ -4,7 +4,7 @@ import { HeartPulse, Hospital, Home, Atom, Clock, CircleDot } from 'lucide-react
 
 const volunteersData = [
   {
-    bay: 'DOCKING_BAY_01',
+    bay: 'PROJECT_01',
     role: 'Clinical Volunteer',
     organization: 'Brooks Rehabilitation',
     date: 'Jun – Jul 2025',
@@ -18,7 +18,7 @@ const volunteersData = [
     ]
   },
   {
-    bay: 'DOCKING_BAY_02',
+    bay: 'PROJECT_02',
     role: 'Hospital Volunteer',
     organization: "Ascension St. Vincent's Foundation",
     date: 'Jun – Jul 2025',
@@ -32,7 +32,7 @@ const volunteersData = [
     ]
   },
   {
-    bay: 'DOCKING_BAY_03',
+    bay: 'PROJECT_03',
     role: 'Community Volunteer',
     organization: 'St. Francis Family Housing',
     date: 'Jul – Dec 2025',
@@ -46,7 +46,7 @@ const volunteersData = [
     ]
   },
   {
-    bay: 'DOCKING_BAY_04',
+    bay: 'PROJECT_04',
     role: 'Museum Volunteer',
     organization: 'Museum of Science & History (MOSH)',
     date: 'Jul 2025',
@@ -73,13 +73,13 @@ const Volunteer = () => {
         className="mb-16 border-l-2 border-accent-blue pl-6 text-left"
       >
         <div className="text-[10px] font-mono text-accent-blue tracking-[0.25em] uppercase mb-1">
-          CARGO & LOGISTICS BAY
+          COMMUNITY SERVICE RECORD
         </div>
         <h2 className="font-mono text-3xl md:text-4xl font-bold tracking-tight mb-3 text-white uppercase text-glow-cyan">
-          VOLUNTEER DOCKING PORTS
+          VOLUNTEER EXPERIENCE
         </h2>
         <p className="text-gray-400 max-w-2xl text-sm font-light">
-          Service hours logbook showing crew missions and community support records across clinical and public sectors.
+          A record of volunteer service and community impact across clinical, educational, and nonprofit environments.
         </p>
       </motion.div>
 
@@ -104,7 +104,7 @@ const Volunteer = () => {
                 <CircleDot size={10} className={`animate-pulse ${item.color}`} />
                 {item.bay}
               </span>
-              <span>PORT // {item.date}</span>
+              <span>PERIOD // {item.date}</span>
             </div>
 
             {/* Meta details */}
@@ -135,8 +135,8 @@ const Volunteer = () => {
 
             {/* Simulated bar meter displaying charge/load */}
             <div className="mt-6 flex items-center justify-between text-[8px] font-mono text-gray-600 uppercase border-t border-white/5 pt-3">
-              <span>CARGO LOAD LIMIT: MAXIMUM</span>
-              <span className="text-accent-teal">SECURE</span>
+              <span>COMMITMENT STATUS: COMPLETE</span>
+              <span className="text-accent-teal">VERIFIED</span>
             </div>
           </motion.div>
         ))}

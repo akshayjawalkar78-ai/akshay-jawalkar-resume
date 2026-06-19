@@ -4,10 +4,10 @@ import { Menu, X, Radio } from 'lucide-react';
 
 const navItems = [
   { label: 'CAPABILITIES', href: '#skills' },
-  { label: 'MISSION LOG', href: '#experience' },
-  { label: 'VOLUNTEER BAY', href: '#volunteer' },
-  { label: 'HONORS', href: '#accomplishments' },
-  { label: 'COMMS LINK', href: '#contact' }
+  { label: 'EXPERIENCE', href: '#experience' },
+  { label: 'VOLUNTEER', href: '#volunteer' },
+  { label: 'AWARDS', href: '#accomplishments' },
+  { label: 'CONTACT', href: '#contact' }
 ];
 
 const Navbar = () => {
@@ -18,8 +18,6 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 40);
-      
-      // Update active nav link based on scroll section
       const scrollPos = window.scrollY + 200;
       for (const item of navItems) {
         const el = document.querySelector(item.href);
@@ -35,7 +33,6 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Floating Navbar Container */}
       <motion.header
         initial={{ y: -100, x: '-50%', opacity: 0 }}
         animate={{ y: 0, x: '-50%', opacity: 1 }}
@@ -47,13 +44,11 @@ const Navbar = () => {
             ? 'border-accent-blue/30 shadow-[0_4px_30px_rgba(0,e5,ff,0.1)]' 
             : 'border-white/5'
         }`}>
-          {/* Deck Signature & Logo */}
           <a href="#" className="font-mono font-bold text-sm tracking-widest text-white hover:text-accent-teal transition-colors flex items-center gap-2" style={{ cursor: 'none' }}>
             <Radio size={12} className="text-accent-teal animate-pulse" />
-            <span>AJ_CMD_DECK</span>
+            <span>AKSHAY JAWALKAR</span>
           </a>
 
-          {/* Desktop Spaceship Deck Navigation */}
           <nav className="hidden md:flex items-center gap-8 font-mono">
             {navItems.map((item) => {
               const isActive = activeItem === item.href;
@@ -67,29 +62,25 @@ const Navbar = () => {
                   style={{ cursor: 'none' }}
                 >
                   {item.label}
-                  {/* Glowing line beneath active link */}
                   {isActive && (
                     <motion.span 
                       layoutId="navActiveLine" 
                       className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-accent-blue to-accent-teal shadow-[0_0_8px_#00ffd2]"
                     />
                   )}
-                  {/* Subtle hover dots */}
                   <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-accent-blue opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </a>
               );
             })}
           </nav>
 
-          {/* Telemetry indicator status */}
           <div className="hidden lg:flex items-center gap-4 text-[9px] font-mono text-gray-500 border-l border-white/10 pl-6 pr-2">
             <span className="flex items-center gap-1">
               <span className="w-1.5 h-1.5 bg-accent-teal rounded-full animate-ping" />
-              CON_STABLE
+              ONLINE
             </span>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden p-1.5 text-gray-400 hover:text-white border border-white/5 rounded-lg bg-space-900/40"
@@ -100,7 +91,6 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile Dropdown Panel */}
         <AnimatePresence>
           {isOpen && (
             <motion.div
@@ -120,7 +110,7 @@ const Navbar = () => {
                     style={{ cursor: 'none' }}
                   >
                     <span>{item.label}</span>
-                    <span className="text-[8px] text-gray-600">CMD//SEC</span>
+                    <span className="text-[8px] text-gray-600">SECTION</span>
                   </a>
                 ))}
               </nav>

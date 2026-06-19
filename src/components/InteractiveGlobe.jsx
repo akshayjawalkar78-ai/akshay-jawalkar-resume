@@ -265,10 +265,10 @@ const InteractiveGlobe = () => {
   return (
     <div className="flex flex-col items-center select-none py-6 px-4 hud-panel border-accent-blue/15 bg-space-950/70 relative">
       <div className="absolute top-3 left-3 text-[8px] font-mono text-accent-blue/60 tracking-widest uppercase">
-        LOC_TRACKER_3D
+        LOCATION SUMMARY
       </div>
       <div className="absolute top-3 right-3 text-[8px] font-mono text-gray-500 tracking-widest uppercase animate-pulse">
-        DRAG TO ROTATE
+        DRAG TO EXPLORE
       </div>
 
       <canvas ref={canvasRef} className="cursor-grab active:cursor-grabbing pointer-events-auto" style={{ cursor: 'none' }} />
@@ -283,7 +283,7 @@ const InteractiveGlobe = () => {
           </div>
         ) : (
           <div className="text-[9px] font-mono text-gray-500 tracking-wider">
-            HOVER/DRAG GLOBE TO INTERACT
+            DRAG TO EXPLORE LOCATIONS
           </div>
         )}
       </div>
