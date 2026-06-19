@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://akshayjawalkar.vercel.app/sitemap.xml
+Sitemap: https://akshayjawalkar.com/sitemap.xml

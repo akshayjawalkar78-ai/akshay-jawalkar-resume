@@ -20,6 +20,25 @@ const GithubIcon = ({ size = 24, className = "" }) => (
   </svg>
 );
 
+const InstagramIcon = ({ size = 24, className = "" }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+  >
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+  </svg>
+);
+
 const Contact = () => {
   return (
     <Section id="contact" className="relative z-10 pb-32">
@@ -54,7 +73,6 @@ const Contact = () => {
             <a 
               href="mailto:akshay.jawalkar78@gmail.com"
               className="flex items-center gap-3 px-6 py-3.5 bg-white/5 border border-white/10 rounded-xl hover:border-accent-teal hover:bg-accent-teal/5 transition-all group w-full sm:w-auto justify-center font-mono text-xs uppercase tracking-wider text-gray-300 hover:text-white"
-              style={{ cursor: 'none' }}
             >
               <Mail size={14} className="text-gray-400 group-hover:text-accent-teal transition-colors" />
               <span>akshay.jawalkar78@gmail.com</span>
@@ -65,11 +83,21 @@ const Contact = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 px-6 py-3.5 bg-white/5 border border-white/10 rounded-xl hover:border-accent-blue hover:bg-accent-blue/5 transition-all group w-full sm:w-auto justify-center font-mono text-xs uppercase tracking-wider text-gray-300 hover:text-white"
-              style={{ cursor: 'none' }}
             >
               <GithubIcon size={14} className="text-gray-400 group-hover:text-accent-blue transition-colors" />
               <span>GitHub Profile</span>
               <ExternalLink size={12} className="text-gray-600 group-hover:text-accent-blue" />
+            </a>
+
+            <a
+              href="https://instagram.com/akshayjawalkar78"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 px-6 py-3.5 bg-white/5 border border-white/10 rounded-xl hover:border-pink-500 hover:bg-pink-500/10 transition-all group w-full sm:w-auto justify-center font-mono text-xs uppercase tracking-wider text-gray-300 hover:text-white"
+            >
+              <InstagramIcon size={14} className="text-gray-400 group-hover:text-pink-500 transition-colors" />
+              <span>@akshayjawalkar78</span>
+              <ExternalLink size={12} className="text-gray-600 group-hover:text-pink-500" />
             </a>
           </div>
 

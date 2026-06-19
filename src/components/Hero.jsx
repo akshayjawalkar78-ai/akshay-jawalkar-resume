@@ -95,12 +95,12 @@ const Hero = () => {
           </motion.p>
 
           <motion.div variants={fadeUpVariant} className="flex flex-wrap items-center gap-4">
-            <a href="#experience" className="inline-flex items-center gap-3 text-white border border-accent-blue/30 hover:border-accent-teal hover:text-accent-teal px-6 py-3 rounded-xl transition-all duration-300 group bg-space-900/40 backdrop-blur-sm relative overflow-hidden" style={{ cursor: 'none' }}>
+            <a href="#experience" className="inline-flex items-center gap-3 text-white border border-accent-blue/30 hover:border-accent-teal hover:text-accent-teal px-6 py-3 rounded-xl transition-all duration-300 group bg-space-900/40 backdrop-blur-sm relative overflow-hidden">
               <span className="absolute inset-0 bg-accent-blue/5 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
               <span className="uppercase tracking-widest text-xs font-mono relative z-10">VIEW EXPERIENCE</span>
               <ArrowDown size={14} className="group-hover:translate-y-0.5 transition-transform relative z-10 text-accent-blue" />
             </a>
-            <a href="#assistant" className="inline-flex items-center gap-2 text-gray-400 hover:text-white border border-white/5 hover:border-white/20 px-6 py-3 rounded-xl transition-all duration-300 font-mono text-xs uppercase" style={{ cursor: 'none' }}>
+            <a href="#assistant" className="inline-flex items-center gap-2 text-gray-400 hover:text-white border border-white/5 hover:border-white/20 px-6 py-3 rounded-xl transition-all duration-300 font-mono text-xs uppercase">
               <span>CONTACT</span>
             </a>
           </motion.div>
@@ -130,8 +130,8 @@ const Hero = () => {
         </div>
         <div className="hud-panel p-4 bg-space-950/40 border-accent-blue/10 flex flex-col justify-center text-left">
           <span className="text-[9px] font-mono text-gray-500 tracking-widest uppercase">HONORS & AWARDS</span>
-          <span className="font-mono text-lg font-bold text-accent-blue mt-1">SCDC & ICDC</span>
-          <span className="text-[8px] font-mono text-gray-600 mt-0.5">DECA & HOSA COMPETITOR</span>
+          <span className="font-mono text-lg font-bold text-accent-blue mt-1">INTERNATIONAL RECOGNITION</span>
+          <span className="text-[8px] font-mono text-gray-600 mt-0.5">SCROLL DOWN FOR MORE</span>
         </div>
         <div className="hud-panel p-4 bg-space-950/40 border-accent-blue/10 flex flex-col justify-center text-left">
           <span className="text-[9px] font-mono text-gray-500 tracking-widest uppercase">CAPITAL MANAGED</span>

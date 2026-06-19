@@ -222,14 +222,6 @@ const Experience = () => {
               <span>PROFILE STATUS:</span>
               <span className="text-accent-teal">ONLINE</span>
             </div>
-            <div className="flex justify-between">
-              <span>RESPONSE TIME:</span>
-              <span>12MS // STANTON</span>
-            </div>
-            <div className="flex justify-between">
-              <span>SECURITY:</span>
-              <span className="text-accent-teal">AES_256</span>
-            </div>
           </div>
         </div>
 
