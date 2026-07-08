@@ -4,11 +4,11 @@ import { Menu, X, Radio } from 'lucide-react';
 
 const navItems = [
   { label: 'CAPABILITIES', href: '#skills' },
-  { label: 'MISSION LOG', href: '#experience' },
-  { label: 'VOLUNTEER BAY', href: '#volunteer' },
+  { label: 'EXPERIENCE', href: '#experience' },
+  { label: 'VOLUNTEERING', href: '#volunteer' },
   { label: 'HONORS', href: '#accomplishments' },
   { label: 'RESUME', href: '#resume' },
-  { label: 'COMMS LINK', href: '#contact' }
+  { label: 'CONTACT', href: '#contact' }
 ];
 
 const Navbar = () => {
@@ -35,12 +35,12 @@ const Navbar = () => {
   return (
     <>
       <motion.header
-        initial={{ y: -100, x: '-50%', opacity: 0 }}
-        animate={{ y: 0, x: '-50%', opacity: 1 }}
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
-        className="fixed top-12 md:top-8 left-1/2 -translate-x-1/2 z-[60] w-[92%] max-w-5xl transition-all duration-300"
+        className="fixed top-12 md:top-8 left-0 right-0 z-[60] flex justify-center w-full pointer-events-none transition-all duration-300 px-4"
       >
-        <div className={`px-6 py-3 md:px-8 md:py-2.5 flex items-center justify-between border transition-all duration-300 rounded-xl bg-space-950/70 backdrop-blur-md ${
+        <div className={`pointer-events-auto w-full max-w-5xl px-5 py-3 md:px-8 md:py-2.5 flex items-center justify-between border transition-all duration-300 rounded-xl bg-space-950/70 backdrop-blur-md ${
           scrolled 
             ? 'border-accent-blue/30 shadow-[0_4px_30px_rgba(0,e5,ff,0.1)]' 
             : 'border-white/5'
