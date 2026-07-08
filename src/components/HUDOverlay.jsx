@@ -39,26 +39,34 @@ const HUDOverlay = () => {
       <div className="cyber-grid" />
       <div className="nebula-clouds" />
 
-      <div className="fixed inset-0 pointer-events-none z-40 hidden md:block">
-        <div className="absolute top-0 left-0 right-0 h-8 bg-space-950/20 border-b border-accent-blue/10 backdrop-blur-[2px] flex items-center justify-between px-8 text-[9px] font-mono tracking-widest text-gray-500">
-          <div className="flex items-center gap-6">
-            <span className="flex items-center gap-1.5 text-accent-blue/70">
-              <Disc size={10} className="animate-spin text-accent-blue" />
-              PROFILE ONLINE
+      {/* Futuristic Telemetry HUD Border Overlays */}
+      <div className="fixed inset-0 pointer-events-none z-40">
+        
+        {/* Top telemetry banner - Visible on all screen sizes */}
+        <div className="absolute top-0 left-0 right-0 h-8 bg-space-950/20 border-b border-accent-blue/10 backdrop-blur-[2px] flex items-center justify-between px-2 md:px-8 text-[7px] md:text-[9px] font-mono tracking-widest text-gray-500">
+          <div className="flex items-center gap-2 md:gap-6">
+            <span className="flex items-center gap-1 md:gap-1.5 text-accent-blue/70">
+              <Disc size={8} className="animate-spin text-accent-blue md:w-[10px] md:h-[10px]" />
+              <span className="hidden sm:inline">PROFILE ONLINE</span>
+              <span className="sm:hidden">SYS: ON</span>
             </span>
+            <span className="hidden md:inline">GRID_REF: STANTON_DECA_HOSA_2026</span>
           </div>
           <div>{time}</div>
-          <div className="flex items-center gap-6">
-            <span className="flex items-center gap-1.5">
-              <Cpu size={10} className="text-accent-teal" />
-              ENGAGEMENT: <span className="text-accent-teal">{engagementLevel}%</span>
+          <div className="flex items-center gap-2 md:gap-6">
+            <span className="flex items-center gap-1 md:gap-1.5">
+              <Cpu size={8} className="text-accent-teal md:w-[10px] md:h-[10px]" />
+              <span className="hidden sm:inline">ENGAGEMENT: </span><span className="text-accent-teal">{engagementLevel}%</span>
             </span>
-            <span className="flex items-center gap-1.5">
+            <span className="hidden md:flex items-center gap-1.5">
               <Shield size={10} className="text-accent-teal" />
               NETWORK STABILITY: MAX
             </span>
           </div>
         </div>
+
+        {/* The rest of the HUD (sidebars, corners) hidden on small screens */}
+        <div className="hidden md:block">
 
         <div className="absolute top-16 left-6 bottom-16 w-4 flex flex-col justify-between items-center text-[8px] font-mono text-gray-600 tracking-widest">
           <div className="flex flex-col gap-1 items-center">
@@ -92,6 +100,8 @@ const HUDOverlay = () => {
         <div className="absolute top-12 right-12 w-6 h-6 border-t border-r border-accent-blue/30" />
         <div className="absolute bottom-12 left-12 w-6 h-6 border-b border-l border-accent-blue/30" />
         <div className="absolute bottom-12 right-12 w-6 h-6 border-b border-r border-accent-blue/30" />
+
+        </div>
       </div>
 
       <div className="fixed bottom-6 right-24 z-45 pointer-events-none hidden lg:block text-[9px] font-mono text-accent-blue/60 tracking-widest">

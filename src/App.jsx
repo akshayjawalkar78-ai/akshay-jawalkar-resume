@@ -13,6 +13,7 @@ import SoundController from './components/SoundController';
 import HUDOverlay from './components/HUDOverlay';
 import RadarMap from './components/RadarMap';
 import AIAssistant from './components/AIAssistant';
+import Resume from './components/Resume';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -109,6 +110,8 @@ function App() {
           </div>
           <AIAssistant />
         </section>
+
+        <Resume />
 
         <Contact />
       </main>
