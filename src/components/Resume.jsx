@@ -9,7 +9,7 @@ const Resume = () => {
     <section className="py-20 relative z-10 max-w-5xl mx-auto px-6 lg:px-12" id="resume">
       <div className="mb-12 text-center flex flex-col items-center">
         <h2 className="font-display text-2xl md:text-4xl font-bold tracking-tight mb-3 text-white uppercase">
-          MISSION_DOSSIER // RESUME
+          RESUME
         </h2>
         <div className="h-[1.5px] w-24 bg-accent-teal mb-4"></div>
         <p className="text-gray-500 max-w-lg text-xs font-mono tracking-wider">
@@ -34,7 +34,7 @@ const Resume = () => {
           style={{ cursor: 'none' }}
         >
           <Download size={18} className="group-hover:-translate-y-1 transition-transform" />
-          DOWNLOAD DOSSIER
+          DOWNLOAD RESUME
         </a>
       </div>
 

@@ -4,10 +4,11 @@ import { Menu, X, Radio } from 'lucide-react';
 
 const navItems = [
   { label: 'CAPABILITIES', href: '#skills' },
-  { label: 'EXPERIENCE', href: '#experience' },
-  { label: 'VOLUNTEER', href: '#volunteer' },
-  { label: 'AWARDS', href: '#accomplishments' },
-  { label: 'CONTACT', href: '#contact' }
+  { label: 'MISSION LOG', href: '#experience' },
+  { label: 'VOLUNTEER BAY', href: '#volunteer' },
+  { label: 'HONORS', href: '#accomplishments' },
+  { label: 'RESUME', href: '#resume' },
+  { label: 'COMMS LINK', href: '#contact' }
 ];
 
 const Navbar = () => {
