@@ -19,6 +19,9 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
     const timer = setTimeout(() => setLoading(false), 2000);
     return () => clearTimeout(timer);
   }, []);
@@ -26,11 +29,13 @@ function App() {
   useEffect(() => {
     if (!loading) {
       // Ensure the page is at the very top immediately after loading finishes
-      try {
-        window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
-      } catch (e) {
-        window.scrollTo(0, 0);
-      }
+      setTimeout(() => {
+        try {
+          window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+        } catch (e) {
+          window.scrollTo(0, 0);
+        }
+      }, 50);
     }
   }, [loading]);
 

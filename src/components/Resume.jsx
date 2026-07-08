@@ -56,9 +56,10 @@ const Resume = () => {
                 </div>
                 <button
                   onClick={() => setIsPreviewOpen(false)}
-                  className="p-1 hover:bg-white/10 rounded-md transition-colors text-gray-400 hover:text-white"
+                  className="flex items-center gap-2 px-3 py-1.5 bg-red-500/10 text-red-400 hover:bg-red-500/30 hover:text-red-200 rounded-md transition-colors font-bold tracking-widest border border-red-500/30"
                   style={{ cursor: 'none' }}
                 >
+                  <span>CLOSE</span>
                   <X size={18} />
                 </button>
               </div>
