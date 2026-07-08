@@ -45,23 +45,25 @@ const Resume = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-12 bg-space-950/90 backdrop-blur-xl"
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 pt-20 md:p-12 bg-space-950/90 backdrop-blur-xl"
           >
+            {/* Absolute floating close button */}
+            <button
+              onClick={() => setIsPreviewOpen(false)}
+              className="absolute top-4 right-4 md:top-8 md:right-8 flex items-center gap-2 px-4 py-2 bg-red-500/90 text-white hover:bg-red-600 rounded-md transition-colors font-bold tracking-widest border border-red-400 z-[110] shadow-[0_0_15px_rgba(239,68,68,0.4)] backdrop-blur-md"
+              style={{ cursor: 'none' }}
+            >
+              <span>CLOSE</span>
+              <X size={20} />
+            </button>
+
             <div className="w-full max-w-5xl h-full max-h-[90vh] hud-panel border-accent-teal/30 bg-space-900/90 relative flex flex-col">
               {/* Header */}
-              <div className="flex items-center justify-between p-4 border-b border-white/10 text-accent-teal font-mono tracking-widest text-xs">
+              <div className="flex items-center justify-center md:justify-start p-4 border-b border-white/10 text-accent-teal font-mono tracking-widest text-xs">
                 <div className="flex items-center gap-2">
                   <Terminal size={14} />
                   <span>DOSSIER_PREVIEW.PDF</span>
                 </div>
-                <button
-                  onClick={() => setIsPreviewOpen(false)}
-                  className="flex items-center gap-2 px-3 py-1.5 bg-red-500/10 text-red-400 hover:bg-red-500/30 hover:text-red-200 rounded-md transition-colors font-bold tracking-widest border border-red-500/30"
-                  style={{ cursor: 'none' }}
-                >
-                  <span>CLOSE</span>
-                  <X size={18} />
-                </button>
               </div>
 
               {/* PDF Container */}

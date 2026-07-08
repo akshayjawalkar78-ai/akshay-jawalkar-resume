@@ -44,12 +44,15 @@ const AIAssistant = () => {
     { text: 'Type "help" to display available commands.', type: 'system' }
   ]);
   const [input, setInput] = useState('');
-  const terminalEndRef = useRef(null);
+  const scrollContainerRef = useRef(null);
 
   useEffect(() => {
     const scrollToBottom = () => {
-      if (terminalEndRef.current) {
-        terminalEndRef.current.scrollIntoView({ behavior: 'smooth' });
+      if (scrollContainerRef.current) {
+        scrollContainerRef.current.scrollTo({
+          top: scrollContainerRef.current.scrollHeight,
+          behavior: 'smooth'
+        });
       }
     };
     // Use a small timeout to ensure DOM has painted the new text
@@ -119,7 +122,10 @@ const AIAssistant = () => {
         </div>
       </div>
 
-      <div className="h-64 overflow-y-auto pr-2 mb-4 space-y-3 font-mono scrollbar-thin scrollbar-thumb-white/10 text-left">
+      <div 
+        ref={scrollContainerRef}
+        className="h-64 overflow-y-auto pr-2 mb-4 space-y-3 font-mono scrollbar-thin scrollbar-thumb-white/10 text-left"
+      >
         {history.map((line, idx) => (
           <div 
             key={idx} 
@@ -133,7 +139,6 @@ const AIAssistant = () => {
             {line.text}
           </div>
         ))}
-        <div ref={terminalEndRef} />
       </div>
 
       <form onSubmit={handleSubmit} className="flex items-center gap-2 border-t border-accent-blue/15 pt-3">
